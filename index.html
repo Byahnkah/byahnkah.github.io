@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>To my baby</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style2.css">
+<style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+  color: #fff;
+  font-family: monospace;
+  white-space: nowrap;
+  letter-spacing: .15em;
+}
+
+#myDi {
+  display: none;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 1em 2em;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+</style>
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+<div class="typewriter" id="typewriterID">
+  <h1>Sending the letter... Please wait. </h1>
+</div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+  <h1>Error!</h1>
+  <p></p>
+  <div class="terminal">
+      <p class="prompt">The letter you requested cannot be found right meow. You need to find it <p>
+      <p class="prompt output new-output"></p>
+  </div>
+</div>
+
+<div>
+  <a href="game.html" hidden="hidden" class="button" id="myDi">Start</a>
+</div>
+
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 7000);
+}
+
+function showPage() {
+  document.getElementById("typewriterID").style.display = "none";
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+  document.getElementById("myDi").style.display = "block";
+}
+</script>
+
+</body>
+</html>
