@@ -61,8 +61,8 @@ body {
 }
 
 .character {
-   width: calc( var(--grid-cell)* 2 );
-   height: calc( var(--grid-cell)* 2 );
+   width: calc( var(--grid-cell)* 4 );
+   height: calc( var(--grid-cell)* 4 );
    position: absolute;
    overflow:hidden;
 }
