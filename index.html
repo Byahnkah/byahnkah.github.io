@@ -5,6 +5,8 @@
 <title>To my baby</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="style2.css">
+<link rel="stylesheet" href="style3.css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <style>
 /* Center the loader */
 #loader {
@@ -87,13 +89,15 @@
   <p></p>
   <div class="terminal">
       <p class="prompt">The letter you requested cannot be found right meow. You need to find it <p>
-      <p class="prompt output new-output"></p>
+
+          <div class="pointer"> <img src="cat.png"> </div>
   </div>
 </div>
 
 <div>
-  <a href="game.html" hidden="hidden" class="button" id="myDi">Start</a>
+  <a href="letter.html" hidden="hidden" class="button" id="myDi"></a>
 </div>
+
 
 <script>
 var myVar;
@@ -108,6 +112,10 @@ function showPage() {
   document.getElementById("myDiv").style.display = "block";
   document.getElementById("myDi").style.display = "block";
 }
+
+      $(document).mousemove(function (e) {
+      $(".pointer").css({ left: e.pageX, top: e.pageY });
+    });
 </script>
 
 </body>
