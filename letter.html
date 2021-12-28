@@ -3,72 +3,62 @@
 <head>
 <title>To my baby</title>
 <link rel="stylesheet" href="style1.css">
+<link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/>
 </head>
+
 <body>
+  <div id="typedtext"></div>
 
-<h1>
-  <a href="" class="typewrite" data-period="2000" data-type='[ "Hi Leah :D", "You know I love you right?", "When I say it I really mean it.", "I like to spend time with you.","I feel comfortable talking to you.","I consider and respect your opinion.","I trust and believe in you.", "I really appreciate you.", "That is what I mean when I say I love you.", "I am not say all these words daily so I just short it...", "ILYSM LEAH <3" ]'>
-    <span class="wrap"></span>
-  </a>
-</h1>
+  <script>
+      // set up text to print, each item in array is new line
+var aText = new Array(
+"Hi Leah :D", "You know I love you right?", 
+"When I say it I really mean it.", 
+"I like to spend time with you.",
+"I feel comfortable talking to you.",
+"I consider and respect you.",
+"I trust and believe in you.", 
+"I really appreciate you.", 
+"That is what I mean when I say I love you.", 
+"I am not say all these words daily so I just short it:", 
+"ILYSM AND YOU ARE SO CUTE LEAH <3",
+" ",
+"So, it is your special day and you should feel more loved today", 
+"but I hope you can feel like this every day.",
+);
+var iSpeed = 100; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+ 
+var iTextPos = 0; // initialise text position
+var sContents = ''; // initialise contents variable
+var iRow; // initialise current row
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("typedtext");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
 
-<script>
-	var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 7) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
 
-    TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
-
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-        var that = this;
-        var delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-        }
-
-        setTimeout(function() {
-        that.tick();
-        }, delta);
-    };
-
-    window.onload = function() {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-              new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-        document.body.appendChild(css);
-    };
-</script>
-
+typewriter();
+  </script>
 </body>
 </html>
