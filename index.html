@@ -5,8 +5,6 @@
 <title>To my baby</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="style2.css">
-<link rel="stylesheet" href="style3.css">
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <style>
 /* Center the loader */
 #loader {
@@ -62,15 +60,13 @@
   letter-spacing: .15em;
 }
 
-#myDi {
-  display: none;
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 1em 2em;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1em;
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
 }
 
 </style>
@@ -88,15 +84,11 @@
   <h1>Error!</h1>
   <p></p>
   <div class="terminal">
-      <p class="prompt">The letter you requested cannot be found right meow. You need to find it <p>
-
-          <div class="pointer"> <img src="cat.png"> </div>
+      <p class="prompt">The letter you requested cannot be found right meow. A cute cat stole it. You need to find. <p>
+        <a href="letter.html"><button type="button"> <img src="cat.png" height ="70" width="70" /></button><a>
   </div>
 </div>
 
-<div>
-  <a href="letter.html" hidden="hidden" class="button" id="myDi"></a>
-</div>
 
 
 <script>
@@ -113,9 +105,6 @@ function showPage() {
   document.getElementById("myDi").style.display = "block";
 }
 
-      $(document).mousemove(function (e) {
-      $(".pointer").css({ left: e.pageX, top: e.pageY });
-    });
 </script>
 
 </body>
