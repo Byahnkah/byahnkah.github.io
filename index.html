@@ -5,6 +5,7 @@
 <title>To my baby</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="style2.css">
+<link rel="stylesheet" href="style3.css">
 <style>
 /* Center the loader */
 #loader {
@@ -17,7 +18,7 @@
   margin: -76px 0 0 -76px;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid #3498db;
+  border-top: 16px solid #bf76da;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
@@ -87,39 +88,51 @@ button {
 
 <div id="loader"></div>
 
-<div class="typewriter" id="typewriterID">
-  <h1>Sending the letter... Please wait. </h1>
+<div class="css-typing" id="typewriterID">
+  <p>
+    Compiling the love...
+  </p>
+  <p>
+    Sending the letter...
+  </p>
+  <p>
+    Please wait.
+  </p>
 </div>
 
 <div style="display:none;" id="myDiv" class="animate-bottom">
   <h1>Error!</h1>
   <p></p>
   <div class="terminal">
-      <p class="prompt">The letter you requested cannot be found right meow. A cute cat stole it. You need to find. <p>
-
+      <p class="prompt">The letter you requested cannot be found right meow. A cute kitten stole it. You need to find. <p>
+        <p class="prompt">(Click on the cats to try find it) <p>
   </div>
 
 </div>
 
 <div id="myDi">
-     <a href="letter.html"><button type="button"> <img src="cat.png" height ="70" width="70" /></button><a>
-          <button type="button"> <img src="cat1.png" height ="70" width="70" />
-            <button type="button"> <img src="cat2.png" height ="70" width="70" />
-              <button type="button"> <img src="cat3.png" height ="70" width="70" />
-                <button type="button"> <img src="cat4.png" height ="70" width="70" />
-                  <button type="button"> <img src="cat.png" height ="70" width="70" />
-                    <button type="button"> <img src="cat1.png" height ="70" width="70" />
-                      <button type="button"> <img src="cat2.png" height ="70" width="70" />
-                        <button type="button"> <img src="cat3.png" height ="70" width="70" />
-                          <button type="button"> <img src="cat4.png" height ="70" width="70" />
-                            <button type="button"> <img src="cat.png" height ="70" width="70" />
+     <a href="letter.html"><button type="button"> <img src="cat.png" height ="40" width="40" /></button><a>
+          <button type="button"> <img src="cat1.png" height ="40" width="40" />
+            <button type="button"> <img src="cat2.png" height ="40" width="40" />
+              <button type="button"> <img src="cat3.png" height ="40" width="40" />
+                <button type="button"> <img src="cat4.png" height ="40" width="40" />
+                  <button type="button"> <img src="cat.png" height ="40" width="40" />
+                    <button type="button"> <img src="cat1.png" height ="40" width="40" />
+                      <button type="button"> <img src="cat2.png" height ="40" width="40" />
+                        <button type="button"> <img src="cat3.png" height ="40" width="40" />
+                          <button type="button"> <img src="cat4.png" height ="40" width="40" />
+                            <button type="button"> <img src="cat.png" height ="40" width="40" />
+                    <button type="button"> <img src="cat1.png" height ="40" width="40" />
+                      <button type="button"> <img src="cat2.png" height ="40" width="40" />
+                        <button type="button"> <img src="cat3.png" height ="40" width="40" />
+                          <button type="button"> <img src="cat4.png" height ="40" width="40" />
 </div>
 
 <script>
 var myVar;
 
 function myFunction() {
-  myVar = setTimeout(showPage, 7000);
+  myVar = setTimeout(showPage, 1000);
 }
 
 function showPage() {
@@ -143,13 +156,13 @@ for ( var i=0; i < divs.length; i++ ) {
     var thisDiv = divs[i];
     
     // get random numbers for each element
-    randomTop = getRandomNumber(0, winHeight-70);
-    randomLeft = getRandomNumber(0, winWidth-70);
+    randomTop = getRandomNumber(200, winHeight-80);
+    randomLeft = getRandomNumber(0, winWidth-80);
     
     // update top and left position
     thisDiv.style.top = randomTop +"px";
     thisDiv.style.left = randomLeft +"px";
-    
+
 }
 
 // function that returns a random number between a min and max
@@ -158,6 +171,7 @@ function getRandomNumber(min, max) {
   return Math.random() * (max - min) + min;
     
 }
+
 </script>
 
 </body>
