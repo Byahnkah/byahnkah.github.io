@@ -32,7 +32,7 @@
   }
 }
 body {
-  background-color: black;
+  background-color: #87da76;
 }
 
 .four-oh-four {
@@ -63,7 +63,7 @@ body {
   padding: 1rem;
 }
 .terminal .prompt {
-  color: #87da76;
+  color: white;
   display: block;
   font-family: "AndaleMono", monospace;
   font-weight: bold;
