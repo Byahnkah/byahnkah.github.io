@@ -2,13 +2,12 @@
   color: white;
   border-right: .15em solid orange;
   font-family: "AndaleMono";
-  font-size: 20px;
+  font-size: 19px;
   white-space: nowrap;
   overflow: hidden;
-  text-align: center;
 }
 .css-typing p:nth-child(1) {
-  width: 8.9em;
+  width: 6.3em;
   -webkit-animation: type 2s steps(40, end);
   animation: type 2s steps(40, end);
   -webkit-animation-fill-mode: forwards;
